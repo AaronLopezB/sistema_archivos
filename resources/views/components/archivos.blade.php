@@ -128,7 +128,7 @@
             var data = new FormData(form[0]);
             // console.log(formData);
             $.ajax({
-                url: '',
+                url: '{{ route('save.archivo') }}',
                 type:"POST",
                 data:data,
                 processData:false,

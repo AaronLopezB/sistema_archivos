@@ -23,8 +23,12 @@ class SupervisorController extends Controller
 
     public function download($archivo)
     {
-       
         $documento = base64_decode($archivo);
         return response()->download(public_path($documento));
+    }
+
+    public function saveArchivo(Request $request)
+    {
+        dd($request->all());
     }
 }
