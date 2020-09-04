@@ -47,4 +47,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function archivos()
+    {
+        return $this->hasMany('App\Archivo', 'id', 'usuario_id');
+    }
+
+    public function departamento()
+    {
+        return $this->hasOne('App\Departamento', 'departamento_id', 'id');
+    }
+
+    public function log_archivos(){
+    	return $this->belongsToMany('App\Archivos')->withPivot('archivo_id');
+    }
 }
