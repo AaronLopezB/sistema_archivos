@@ -19,12 +19,16 @@
     }
 }); */
 
-/* Auth::routes(); */
+Auth::routes();
 Route::auth();
 /* Route::post('login', 'AuthController@login')->name('login');
 Route::get('logout', 'AuthController@logout')->name('logout'); */
 
+Route::get('/vista_genera','SupervisorController@index')->name('vista_genera');
+Route::get('/carpeta/{carpeta}','SupervisorController@show')->name('carpeta');
+Route::get('/download/{archivo}','SupervisorController@download')->name("download");
+
 Route::middleware(['auth'])->group(function(){
-    Route::get('admin', 'SupervisorController@index')->name('admin');
+    Route::get('/', 'SupervisorController@index')->name('admin');
     Route::get('/home', 'HomeController@index')->name('home');
 });

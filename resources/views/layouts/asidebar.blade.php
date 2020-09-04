@@ -22,7 +22,7 @@
 
 			<div class="image">
 
-				<img alt="User Image" class="img-circle elevation-2" src="dist/img/user2-160x160.jpg">
+				<img alt="User Image" class="img-circle elevation-2" src="{{ asset('dist/img/user2-160x160.jpg') }}">
 
 			</div>
 
